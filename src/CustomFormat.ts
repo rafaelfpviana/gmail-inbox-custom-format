@@ -1,7 +1,7 @@
 import { gmail_v1 } from 'googleapis';
-import { Message } from '../gmail-inbox/src/Message.interface';
-import { FormatMessageInterface } from '../gmail-inbox/src/FormatMessageInterface.interface';
-import { FormatMessage } from '../gmail-inbox/src/FormatMessage';
+import { Message } from 'gmail-inbox/lib/Message.interface';
+import { FormatMessageInterface } from 'gmail-inbox/lib/FormatMessageInterface.interface';
+import { FormatMessage } from 'gmail-inbox/lib/FormatMessage';
 
 interface CustomMessage extends Message {
     xHeaders: Array<gmail_v1.Schema$MessagePartHeader> | undefined;

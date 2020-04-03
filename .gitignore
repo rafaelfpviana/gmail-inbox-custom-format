@@ -4,3 +4,4 @@ node_modules/
 lib/
 credentials.json
 gmail-token.json
+package-lock.json

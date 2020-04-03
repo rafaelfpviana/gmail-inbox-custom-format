@@ -1,5 +1,5 @@
-const ib = require('./gmail-inbox');
-const customFormat = require('./lib/src/CustomFormat');
+const ib = require('gmail-inbox');
+const customFormat = require('./lib/CustomFormat');
 
 async function exeCuteMe() {
 	let inbox = new ib.Inbox(
