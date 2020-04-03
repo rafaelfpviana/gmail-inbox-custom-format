@@ -2,3 +2,5 @@ old/
 gmail-inbox/
 node_modules/
 lib/
+credentials.json
+gmail-token.json
