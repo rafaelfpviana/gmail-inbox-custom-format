@@ -2,6 +2,7 @@ old/
 gmail-inbox/
 node_modules/
 lib/
-credentials.json
-gmail-token.json
-package-lock.json
+./credentials.json
+./gmail-token.json
+./package-lock.json
+./workspace.code-workspace
