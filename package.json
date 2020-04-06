@@ -13,7 +13,9 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
+    "@types/psl": "^1.1.0",
+    "gmail-inbox": "file:./gmail-inbox",
     "googleapis": "^48.0.0",
-    "gmail-inbox": "git://github.com:rafaelfpviana/gmail-inbox.git"
+    "psl": "^1.8.0"
   }
 }

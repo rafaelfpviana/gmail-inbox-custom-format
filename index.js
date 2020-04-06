@@ -1,4 +1,4 @@
-const ib = require('gmail-inbox');
+const ib = require('./gmail-inbox');
 const customFormat = require('./lib/CustomFormat');
 
 async function exeCuteMe() {
@@ -9,23 +9,29 @@ async function exeCuteMe() {
 	);
 	await inbox.authenticateAccount(); // logs user in
 
-	let messages = await inbox.findMessages({
-		category: 'promotions',
+	const options = {
+		category: 'updates',
 		before: {
-			date: new Date(2020, 03, 31),
+			date: new Date(2020, 4, 5),
 			precision: 'day'
 		},
 		after: {
-			date: new Date(2020, 01, 01),
+			date: new Date(2020, 4, 4),
 			precision: 'day'
 		}
-	}, 200);
+	};
+	const msgPerRequest = 2;
+
+	var messages = await inbox.findMessages(options, msgPerRequest);
+
+	while(inbox.getPageToken()){
+		let loopMessages = await inbox.findMessages(options, msgPerRequest);
+		if(loopMessages.length)
+			messages = messages.concat(loopMessages);
+	}
 
 	let messagesJson = JSON.stringify(messages, null, 2);
-
 	console.log(messagesJson);
-
-	// Note: give  https://github.com/ismail-codinglab/gmail-inbox a star if it saved you time!
 }
 
 exeCuteMe();
