@@ -6,4 +6,4 @@ lib/
 /gmail-token.json
 /package-lock.json
 /workspace.code-workspace
-/output.json
+output/

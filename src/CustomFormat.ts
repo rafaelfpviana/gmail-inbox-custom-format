@@ -80,8 +80,10 @@ export class CustomFormat extends FormatMessage implements FormatMessageInterfac
     }
 
     private extractFromParts(from: string): FromParts {
-        let parts = from.match(this.fromRegX);
         let partsObj: FromParts = { name: '', address: '', domain: '' };
+        if(from === undefined)
+            return partsObj;
+        let parts = from.match(this.fromRegX);
         if (parts === null)
             return partsObj;
         const email = parts[2] || parts[3];

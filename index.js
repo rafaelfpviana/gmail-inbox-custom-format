@@ -1,4 +1,4 @@
-const ib = require('./gmail-inbox');
+const ib = require('gmail-inbox');
 const customFormat = require('./lib/CustomFormat');
 
 async function exeCuteMe() {
@@ -10,17 +10,17 @@ async function exeCuteMe() {
 	await inbox.authenticateAccount(); // logs user in
 
 	const options = {
-		category: 'updates',
+		category: 'promotions',
 		before: {
-			date: new Date(2020, 4, 5),
+			date: new Date('April 1, 2020'),
 			precision: 'day'
 		},
 		after: {
-			date: new Date(2020, 4, 4),
+			date: new Date('March 1, 2020'),
 			precision: 'day'
 		}
 	};
-	const msgPerRequest = 2;
+	const msgPerRequest = 200;
 
 	var messages = await inbox.findMessages(options, msgPerRequest);
 
